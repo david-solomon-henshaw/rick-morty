@@ -20,9 +20,9 @@ const CharacterDetails = () => {
         .then((res) => {
           const results = res.data
           setCharacter(results);
-          console.log(res.data)
+         // console.log(res.data)
           setLocation(res.data.location.name)
-          console.log(location)
+         // console.log(location)
 
         })
         .catch((error) => {
@@ -42,16 +42,16 @@ const CharacterDetails = () => {
     
   {
 
-    <div class="card" style={{width: "18rem"}}>
+    <div className="card" style={{width: "18rem"}}>
  <img src={character.image} className="img-fluid rounded-start" alt="..."/>
-    <div class="card-body">
-      <h5 class="card-title">{character.name}</h5>
+    <div className="card-body">
+      <h5 className="card-title">{character.name}</h5>
     </div>
-    <ul class="list-group list-group-flush">
-      <li class="list-group-item"> Gender: {character.gender}</li>
-      <li class="list-group-item"> Status: {character.status}</li>
-      <li class="list-group-item">Species:  {character.species}</li>
-      <li class="list-group-item"> Location: {location}</li>
+    <ul className="list-group list-group-flush">
+      <li className="list-group-item"> Gender: {character.gender}</li>
+      <li className="list-group-item"> Status: {character.status}</li>
+      <li className="list-group-item">Species:  {character.species}</li>
+      <li className="list-group-item"> Location: {location}</li>
 
     </ul>
   

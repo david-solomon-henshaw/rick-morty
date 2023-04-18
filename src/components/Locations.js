@@ -43,7 +43,7 @@ const Locations = () => {
       .get("https://rickandmortyapi.com/api/location")
       .then((res) => {
         const results = res.data.results;
-        console.log(results)
+       //console.log(results)
         setLocations(results);
         setPageCountLocations(res.data.info.pages)
       })
@@ -67,13 +67,12 @@ const Locations = () => {
         <>
           {locationsArray.map((data) => (
             
-            <ul class="list-group"
+            <ul className="list-group"
               key={data.id}
-              className="card text-center col-sm"
               style={{ width: "18rem" }}
             >
-            <h1 class="list-group-item">{data.name}</h1>
-            <li class="list-group-item">
+            <h1 className="list-group-item">{data.name}</h1>
+            <li className="list-group-item">
             
             <Link
                         to={`/location/${data.id}`}

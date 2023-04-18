@@ -3,26 +3,27 @@ import { Link, useParams } from "react-router-dom";
 import axios from "axios";
 
 const LocationDetails = () => {
-  const [planet, setLocations] = useState("");
+  const [planet, setPlanet] = useState("");
   const [residents, setResidents] = useState([]);
   const [residentsArray, setResidentsArray] = useState([]);
   //const [numRes, setResNum] = useState(null)
   // let string = ''
   const { id } = useParams();
 
-  const residentsFunc = (res) => {
-    for (let num = 0; num < res; num++) {
-      for (var val of residents) {
-        console.log(val)
-    //     axios
-    //       .get(res)
-    //       .then((data) => {
-    //         setResidentsArray([...residentsArray, res]);
-    //       })
-    //       .catch((error) => console.log(error, res));
-     }
-    }
-  };
+  const residentsFunc = ( ) => {
+        
+        for (let num = 0; num < residentsArray.length; num ++) {
+            console.log(num)
+        // axios.get(String(residentsArray[num]))
+        //   .then((info) => {
+        //     console.log('Success',info)
+        //     setResidents(residents.concat(info.data))
+        //     console.log(residents)
+        
+        //   })
+        //   .catch((error) => {console.log(error, "Error")});
+        }
+        };
 
 
 
@@ -38,14 +39,13 @@ const LocationDetails = () => {
       .get(`https://rickandmortyapi.com/api/location/${id}`)
       .then((res) => {
         const results = res.data;
-        console.log(res);
-        setLocations(results);
-        setResidents(results.residents);
+        setPlanet(results);
+        setResidentsArray(res.data.residents);
 
-        residentsFunc(residents.length);
+        residentsFunc()     
+        
 
-        // setResidents(results.residents)
-        // setResNum(residents.length)
+       
       })
       .catch((error) => {
         console.log(error);
@@ -68,31 +68,7 @@ const LocationDetails = () => {
         </div>
       }
 
-      <div className="row justify-content-center">
-        {residents.length > 0 ? (
-          <>
-            {residentsArray.map((data) => (
-              <div className="col-md-4 col-sm-6 col-12 col" key={data.id}>
-                <div className="card " style={{ maxWidth: "18rem" }}>
-                  <img src={data.image} className="card-img-top" alt="..." />
-                  <div className="card-body">
-                    <h5 className="card-title">{data.name}</h5>
-                    <Link
-                      to={`/character/${data.id}`}
-                      className="btn btn-success"
-                    >
-                      {" "}
-                      View Profile{" "}
-                    </Link>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </>
-        ) : (
-          <p> </p>
-        )}
-      </div>
+    
     </div>
   );
 };
