@@ -75,10 +75,9 @@ const Characters = ({ filterHuman, filterAlien, filterHumanoid, filterPoopybutho
           {characterArray.length > 0 ? (
             <>
               {characterArray.map((data) => (
-                <div className="col-md-4 col-sm-6 col-12 col" key={data.id}>
+                <div className="col-sm-4" key={data.id}>
                   <div
                     className="card "
-                    style={{ maxWidth: "18rem" }}
                   >
                     <img src={data.image} className="card-img-top" alt="..." />
                     <div className="card-body">
