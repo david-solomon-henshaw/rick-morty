@@ -7,7 +7,7 @@ const Navbar = () => {
       <nav className="navbar navbar-expand-lg bg-success text-emphasis-success">
         <div className="container-fluid">
           <Link to='/' className="navbar-brand" >
-            <img src="https://www.freepnglogos.com/uploads/rick-and-morty-png/list-rick-and-morty-episodes-wikipedia-24.png" style={{width: "100px"}} />
+            <img src="https://www.freepnglogos.com/uploads/rick-and-morty-png/list-rick-and-morty-episodes-wikipedia-24.png" style={{width: "100px"}} alt='logo' />
           </Link>
           <button
             className="navbar-toggler"
