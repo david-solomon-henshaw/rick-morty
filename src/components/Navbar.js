@@ -4,10 +4,10 @@ import { Link } from "react-router-dom";
 const Navbar = () => {
   return (
     <div>
-      <nav className="navbar navbar-expand-lg bg-body-tertiary">
+      <nav className="navbar navbar-expand-lg bg-success text-emphasis-success">
         <div className="container-fluid">
           <Link to='/' className="navbar-brand" >
-            Navbar
+            <img src="https://www.freepnglogos.com/uploads/rick-and-morty-png/list-rick-and-morty-episodes-wikipedia-24.png" style={{width: "100px"}} />
           </Link>
           <button
             className="navbar-toggler"
@@ -21,7 +21,7 @@ const Navbar = () => {
             <span className="navbar-toggler-icon"></span>
           </button>
           <div className="collapse navbar-collapse" id="navbarTogglerDemo02">
-            <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+            <ul className="navbar-nav me-auto mb-2 mb-lg-0 ">
               <li className="nav-item">
                 <Link to='/' className="nav-link active" aria-current="page" >
                   Characters
